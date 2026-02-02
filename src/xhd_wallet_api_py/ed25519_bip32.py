@@ -1,5 +1,6 @@
 from cffi import FFI
 import os
+import platform
 from typing import Any
 
 ffi = FFI()
@@ -66,11 +67,23 @@ ReturnCode seed_from_mnemonic(
 );
 ''')
 
-_dykib_path = os.path.join(
+# Determine library extension based on platform
+_system = platform.system()
+if _system == "Darwin":
+    _lib_ext = ".dylib"
+elif _system == "Linux":
+    _lib_ext = ".so"
+elif _system == "Windows":
+    _lib_ext = ".dll"
+else:
+    raise RuntimeError(f"Unsupported platform: {_system}")
+
+# Load library from the package directory
+_dylib_path = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    '../../rust-ed25519-bip32/target/release/libed25519_bip32.dylib'
+    f'libed25519_bip32{_lib_ext}'
 )
-lib = ffi.dlopen(_dykib_path)
+lib = ffi.dlopen(_dylib_path)
 
 XPRV_SIZE = 96
 XPUB_SIZE = 64
