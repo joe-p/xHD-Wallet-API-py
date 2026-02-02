@@ -8,7 +8,13 @@ class CustomBuildHook(BuildHookInterface):
         # build_data contains the root directory of the project
         project_root = self.root
         rust_dir = os.path.join(project_root, "rust-ed25519-bip32")
-        
+       
+        subprocess.run(
+            ["git", "submodule", "update", "--init", "--recursive"],
+            cwd=project_root,
+            check=True
+        )
+
         # Run cargo build --release
         subprocess.run(
             ["cargo", "build", "--release"],
