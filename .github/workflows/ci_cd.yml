@@ -56,7 +56,7 @@ jobs:
         run: uv build --wheel
 
       - name: pytest
-        run: uv pip install && uv run pytest
+        run: uv pip install dist/*.whl && uv run pytest
 
       - name: Upload build artifacts
         if: github.event_name == 'push'
@@ -139,7 +139,7 @@ jobs:
       - name: pytest
         env:
           RUN: |
-            uv pip install && uv run pytest
+            uv pip install dist/*.whl && uv run pytest
         run: docker exec build-container bash -c "$RUN"
 
       - name: Upload build artifacts
