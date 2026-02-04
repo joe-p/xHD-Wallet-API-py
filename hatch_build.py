@@ -26,19 +26,22 @@ class CustomBuildHook(BuildHookInterface):
             check=True
         )
         
-        # Determine library extension based on platform
+        # Determine library extension and prefix based on platform
         system = platform.system()
         if system == "Darwin":
             lib_ext = ".dylib"
+            lib_prefix = "lib"
         elif system == "Linux":
             lib_ext = ".so"
+            lib_prefix = "lib"
         elif system == "Windows":
             lib_ext = ".dll"
+            lib_prefix = ""  # Windows doesn't use 'lib' prefix for DLLs
         else:
             raise RuntimeError(f"Unsupported platform: {system}")
         
         # Copy the built library to the package directory
-        src_lib = os.path.join(rust_dir, "target", "release", f"libed25519_bip32{lib_ext}")
+        src_lib = os.path.join(rust_dir, "target", "release", f"{lib_prefix}ed25519_bip32{lib_ext}")
         dst_lib = os.path.join(package_dir, f"libed25519_bip32{lib_ext}")
         
         if os.path.exists(src_lib):
