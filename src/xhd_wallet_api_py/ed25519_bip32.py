@@ -10,7 +10,8 @@ typedef enum {
     InvalidRootKey = 1,
     InvalidDerivationScheme = 2,
     InvalidLanguageCode = 3,
-    InvalidUtf8 = 4
+    InvalidUtf8 = 4,
+    AlreadyHardenedDerivationIndex = 5
 } ReturnCode;
 
 ReturnCode derive_path(
@@ -104,6 +105,7 @@ class ReturnCode:
     InvalidDerivationScheme = 2
     InvalidLanguageCode = 3
     InvalidUtf8 = 4
+    AlreadyHardenedDerivationIndex = 5
 
 def _check_return_code(code: int) -> None:
     if code == ReturnCode.Success:
@@ -116,6 +118,8 @@ def _check_return_code(code: int) -> None:
         raise ValueError("Invalid language code or mnemonic")
     elif code == ReturnCode.InvalidUtf8:
         raise ValueError("Invalid UTF-8 encoding")
+    elif code == ReturnCode.AlreadyHardenedDerivationIndex:
+        raise ValueError("Already hardened derivation index")
     else:
         raise RuntimeError(f"Unknown return code: {code}")
 
