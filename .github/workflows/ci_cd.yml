@@ -2,8 +2,6 @@ name: Python CI/CD
 
 on:
   push:
-    tags:
-      - 'v*'  
     branches:
       - main
   pull_request:
