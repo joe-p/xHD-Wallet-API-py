@@ -1,5 +1,5 @@
 [project]
-name = "xhd-wallet-api"
+name = "test-xhd-wallet-api"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
