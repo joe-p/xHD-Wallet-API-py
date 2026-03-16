@@ -241,7 +241,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.release.outputs.tag }}
-      
+     
+      - name: ls dist
+        run: ls -lR
+
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
