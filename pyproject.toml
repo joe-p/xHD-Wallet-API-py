@@ -33,6 +33,7 @@ type = "github"
 
 [tool.semantic_release.publish]
 upload_to_vcs_release = false
+vcs_release = false
 
 [tool.hatch.build.hooks.custom]
 path = "hatch_build.py"
