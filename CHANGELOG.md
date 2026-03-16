@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-03-16)
+
+### Features
+
+- Notes-from-tag
+  ([`f0eab11`](https://github.com/joe-p/xHD-Wallet-API-py/commit/f0eab110d3f8566bc46a2f58ce814af5062c4471))
+
+
 ## v1.1.0 (2026-03-16)
 
 ### Features
