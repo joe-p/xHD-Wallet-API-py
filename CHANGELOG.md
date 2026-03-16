@@ -12,7 +12,6 @@
 - Fake2
   ([`253c6be`](https://github.com/joe-p/xHD-Wallet-API-py/commit/253c6bedf17f3778b1812164172c2b4d8161f475))
 
-
 ## v0.2.0 (2026-03-16)
 
 - Initial Release
