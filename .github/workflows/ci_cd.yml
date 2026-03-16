@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "version=$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
           echo "tag=v$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
-          uv run semantic-release version --no-vcs-release
+          uv run semantic-release version
           echo "released=true" >> $GITHUB_OUTPUT
  
 
@@ -248,11 +248,8 @@ jobs:
       - name: ls cwd
         run: ls
 
-      - name: Create GitHub Release
+      - name: Upload artifacts to existing release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create ${{ needs.release.outputs.tag }} \
-            --title "${{ needs.release.outputs.tag }}" \
-            --notes-from-tag \
-            dist/*.whl
+          gh release upload ${{ needs.release.outputs.tag }} dist/*.whl --clobber
