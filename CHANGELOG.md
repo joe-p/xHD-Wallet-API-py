@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.7.0 (2026-03-16)
+
+### Features
+
+- Checkout first, pwd
+  ([`dff71e7`](https://github.com/joe-p/xHD-Wallet-API-py/commit/dff71e7b9be84c427a6afa3959d50b023a3d9d18))
+
+
 ## v1.6.0 (2026-03-16)
 
 ### Features
