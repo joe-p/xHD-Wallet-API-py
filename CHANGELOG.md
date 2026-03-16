@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.11.0 (2026-03-16)
+
+### Features
+
+- No vcs release flag
+  ([`2fd2bf5`](https://github.com/joe-p/xHD-Wallet-API-py/commit/2fd2bf52d1c6255ebd7dba4a91586dbaba08502c))
+
+
 ## v1.10.0 (2026-03-16)
 
 ### Features
