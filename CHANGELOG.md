@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v1.14.0 (2026-03-16)
+
+### Chores
+
+- Rm ls
+  ([`5168540`](https://github.com/joe-p/xHD-Wallet-API-py/commit/51685401d3707b688a310a4cc910c14e49c4530f))
+
+### Features
+
+- Try PSR v10
+  ([`ab40c6d`](https://github.com/joe-p/xHD-Wallet-API-py/commit/ab40c6d5d3fbc3996dfb7832edfd1b9724c3f3c6))
+
+
 ## v1.13.0 (2026-03-16)
 
 ### Features
