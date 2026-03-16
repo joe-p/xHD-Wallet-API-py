@@ -242,12 +242,6 @@ jobs:
         with:
           packages-dir: dist/
 
-      - name: pwd
-        run: pwd
-    
-      - name: ls cwd
-        run: ls
-
       - name: Upload artifacts to existing release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
