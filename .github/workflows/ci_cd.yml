@@ -255,4 +255,5 @@ jobs:
           gh release create ${{ needs.release.outputs.tag }} \
             --title "${{ needs.release.outputs.tag }}" \
             --notes-from-tag \
+            --no-vcs-release \
             dist/*.whl
