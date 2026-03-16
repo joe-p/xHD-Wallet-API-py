@@ -1,6 +1,6 @@
 [project]
 name = "test-xhd-wallet-api"
-version = "1.8.0"
+version = "1.9.0"
 description = "Add your description here"
 authors = [
     { name = "Joe Polny", email = "joepolny@gmail.com" }
