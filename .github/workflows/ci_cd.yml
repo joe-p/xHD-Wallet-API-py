@@ -65,7 +65,7 @@ jobs:
         run: echo "name=$(basename dist/*.whl)" >> $GITHUB_OUTPUT
 
       - name: Upload build artifacts
-        # if: github.event_name == 'push'
+        if: github.event_name == 'push'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.wheel.outputs.name }}
@@ -169,7 +169,7 @@ jobs:
           echo "name=$(basename wheelhouse/*.whl)" >> $GITHUB_OUTPUT
 
       - name: Upload build artifacts
-        # if: github.event_name == 'push'
+        if: github.event_name == 'push'
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.wheel.outputs.name }}
@@ -180,7 +180,7 @@ jobs:
   publish:
     name: Publish to PyPI
     needs: [build_and_test, linux_build_and_test]
-    # if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     
     permissions:
