@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.13.0 (2026-03-16)
+
+### Features
+
+- Append artifacts to release
+  ([`29d778b`](https://github.com/joe-p/xHD-Wallet-API-py/commit/29d778bded47352af4cbc439bbbcf1a4ddcb01f9))
+
+
 ## v1.12.0 (2026-03-16)
 
 ### Features
