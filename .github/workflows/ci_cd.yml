@@ -244,5 +244,5 @@ jobs:
         run: |
           gh release create ${{ needs.release.outputs.tag }} \
             --title "${{ needs.release.outputs.tag }}" \
-            --notes-file CHANGELOG.md \
+            --notes-from-tag \
             dist/*.whl
