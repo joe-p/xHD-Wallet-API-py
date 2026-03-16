@@ -48,7 +48,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          uv run semantic-release publish
+          uv run semantic-release version
           echo "released=true" >> $GITHUB_OUTPUT
           echo "version=$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
           echo "tag=v$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
