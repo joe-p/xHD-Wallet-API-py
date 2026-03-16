@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.6.0 (2026-03-16)
+
+### Features
+
+- Ls cwd
+  ([`9bc54b5`](https://github.com/joe-p/xHD-Wallet-API-py/commit/9bc54b567e71b431d9d59d671583598acfb56b08))
+
+
 ## v1.5.0 (2026-03-16)
 
 ### Features
