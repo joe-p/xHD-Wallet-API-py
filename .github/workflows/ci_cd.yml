@@ -227,6 +227,10 @@ jobs:
       contents: write  # Required to create GitHub releases
     
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.release.outputs.tag }}
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
@@ -238,15 +242,11 @@ jobs:
         with:
           packages-dir: dist/
 
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ needs.release.outputs.tag }}
+      - name: pwd
+        run: pwd
     
       - name: ls cwd
         run: ls
-
-      - name: ls dist
-        run: ls -lR xHD-Wallet-API-py/dist
 
       - name: Create GitHub Release
         env:
