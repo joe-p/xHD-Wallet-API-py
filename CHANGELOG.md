@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2026-03-16)
+
+### Features
+
+- Actually ls dist
+  ([`d81701d`](https://github.com/joe-p/xHD-Wallet-API-py/commit/d81701dd55fac215f9c1be911ac2d8760ff96f4a))
+
+
 ## v1.4.0 (2026-03-16)
 
 ### Features
