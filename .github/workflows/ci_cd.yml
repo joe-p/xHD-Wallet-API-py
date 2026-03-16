@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "version=$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
           echo "tag=v$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
-          uv run semantic-release version
+          uv run semantic-release version --no-vcs-release
           echo "released=true" >> $GITHUB_OUTPUT
  
 
@@ -255,5 +255,4 @@ jobs:
           gh release create ${{ needs.release.outputs.tag }} \
             --title "${{ needs.release.outputs.tag }}" \
             --notes-from-tag \
-            --no-vcs-release \
             dist/*.whl
