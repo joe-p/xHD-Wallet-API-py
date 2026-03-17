@@ -55,10 +55,20 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
         run: |
-          echo "version=$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
-          echo "tag=v$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
-          uv run semantic-release version
-          echo "released=true" >> $GITHUB_OUTPUT
+          # echo "version=$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
+          # echo "tag=v$(uv run semantic-release version --print)" >> $GITHUB_OUTPUT
+          # uv run semantic-release version
+          # echo "released=true" >> $GITHUB_OUTPUT
+          NEXT=$(uv run semantic-release version --print)
+          LAST=$(uv run semantic-release version --print-last-released)
+          echo "version=$NEXT" >> $GITHUB_OUTPUT
+          echo "tag=v$NEXT" >> $GITHUB_OUTPUT
+          if [ "$NEXT" != "$LAST" ]; then
+            uv run semantic-release version
+            echo "released=true" >> $GITHUB_OUTPUT
+          else
+            echo "released=false" >> $GITHUB_OUTPUT
+          fi
  
 
   build_and_test:
