@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.16.0 (2026-03-17)
+
+### Features
+
+- Use ref
+  ([`855a7c2`](https://github.com/joe-p/xHD-Wallet-API-py/commit/855a7c211550d9e11ce4a8b4edaf732d2eb6ea5e))
+
+
 ## v1.15.0 (2026-03-17)
 
 ### Continuous Integration
