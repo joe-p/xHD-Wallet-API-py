@@ -94,7 +94,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ needs.release.outputs.released == 'true' && needs.release.outputs.tag || github.ref }}
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.85.0
@@ -160,7 +160,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: ${{ needs.release.outputs.released == 'true' && needs.release.outputs.tag || github.ref }}
 
       - name: Set up QEMU
         if: matrix.arch != 'aarch64' && matrix.arch != 'x86_64'
