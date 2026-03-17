@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.17.0 (2026-03-17)
+
+### Features
+
+- Try narrowing perms
+  ([`d2f86db`](https://github.com/joe-p/xHD-Wallet-API-py/commit/d2f86db460ea56f388492b3164ee8449edc21578))
+
+
 ## v1.16.0 (2026-03-17)
 
 ### Features
