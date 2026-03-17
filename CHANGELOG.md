@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v1.15.0 (2026-03-17)
+
+### Continuous Integration
+
+- Proper released
+  ([`fdf0c1e`](https://github.com/joe-p/xHD-Wallet-API-py/commit/fdf0c1e1b0a6c86704c40b107ec5490bbe7efc2e))
+
+- Use token bot
+  ([`bf35002`](https://github.com/joe-p/xHD-Wallet-API-py/commit/bf3500234f1f1eab48763bd8cfba6c3a54cdef26))
+
+### Features
+
+- Fake feat 4
+  ([`dcf6b88`](https://github.com/joe-p/xHD-Wallet-API-py/commit/dcf6b8837513be1ebe4ecb8491dcb6b3b2987db0))
+
+
 ## v1.14.0 (2026-03-16)
 
 ### Chores
