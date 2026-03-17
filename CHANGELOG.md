@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.18.0 (2026-03-17)
+
+### Features
+
+- Update changelog config
+  ([`0806601`](https://github.com/joe-p/xHD-Wallet-API-py/commit/08066015c6d7d1ebd544f395a92f746dab1cfe0f))
+
+
 ## v1.17.0 (2026-03-17)
 
 ### Features
