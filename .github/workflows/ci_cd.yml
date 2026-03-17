@@ -8,9 +8,7 @@ on:
     branches:
       - main
 
-permissions:
-  actions: write # to upload artifacts
-  contents: write # to create releases
+permissions: {}
 
 env:
   # Python >= 3.8 is needed to support manylinux_x_y tags (unless you want to manually update pip)
@@ -22,6 +20,8 @@ jobs:
     name: Semantic Release
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write # to create releases
     outputs:
       released: ${{ steps.semantic-release.outputs.released }}
       version: ${{ steps.semantic-release.outputs.version }}
@@ -78,6 +78,8 @@ jobs:
     runs-on: ${{ matrix.target.runner }}
     needs: release
     if: always() && (needs.release.result == 'success' || needs.release.result == 'skipped')
+    permissions:
+      actions: write # to upload artifacts
     strategy:
       matrix:
         target:
@@ -134,6 +136,8 @@ jobs:
     runs-on: ubuntu-22.04${{ matrix.arch == 'aarch64' && '-arm' || '' }}
     needs: release
     if: always() && (needs.release.result == 'success' || needs.release.result == 'skipped')
+    permissions:
+      actions: write # to upload artifacts
     strategy:
       matrix:
         # i686, ppc64le, s390x are also supported but not running them for now to reduce CI time
